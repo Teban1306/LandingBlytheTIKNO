@@ -42,7 +42,7 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-5 h-5 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+          className={`w-5 h-5 ${index < rating ? 'text-primary-500' : 'text-dark-500'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -55,14 +55,14 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-black/40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Encabezado de la sección */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-700 max-w-2xl mx-auto">
             Descubre por qué las empresas confían en nosotros para impulsar su crecimiento
           </p>
         </div>
@@ -70,21 +70,21 @@ export const Testimonials = () => {
         {/* Grid de testimonios */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="h-full">
+            <Card key={index} className="h-full bg-dark-100 border border-dark-300">
               <div className="p-6">
                 <StarRating rating={testimonial.rating} />
-                <blockquote className="mt-4 mb-6 text-gray-600 italic">
+                <blockquote className="mt-4 mb-6 text-dark-700 italic">
                   "{testimonial.quote}"
                 </blockquote>
                 <div className="flex items-center">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-500"
                   />
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">
+                    <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-dark-700">
                       {testimonial.role} en {testimonial.company}
                     </p>
                   </div>

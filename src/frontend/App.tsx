@@ -1,23 +1,32 @@
 import { Navbar } from './components/common/Navigation/Navbar';
 import { Hero } from './components/sections/Hero/Hero';
-import { Features } from './components/sections/Features/Features';
-import { Testimonials } from './components/sections/Testimonials/Testimonials';
-import { Pricing } from './components/sections/Pricing/Pricing';
-import { Contact } from './components/sections/Contact/Contact';
+import { About } from './components/sections/About/About';
+import { Gallery } from './components/sections/Gallery/Gallery';
+import { Customize } from './components/sections/Customize/Customize';
+import { Reviews } from './components/sections/Reviews/Reviews';
+import { Blog } from './components/sections/Blog/Blog';
+import { CTA } from './components/sections/CTA/CTA';
 import { Footer } from './components/common/Footer/Footer';
+import { FloatingImage } from './components/common/FloatingImage/FloatingImage';
+import blythefont from './assets/images/Blythefont.png';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Testimonials />
-        <Pricing />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen relative bg-gradient-to-b from-[#fff1f8] to-[#f8f2ff]">
+      <div className="relative">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Gallery />
+          <Customize />
+          <Reviews />
+          <Blog />
+          <CTA />
+        </main>
+        <Footer />
+        <FloatingImage imagePath={blythefont} altText="Blythe Icon" size={80} />
+      </div>
     </div>
   );
 }

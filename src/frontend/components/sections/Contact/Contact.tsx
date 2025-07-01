@@ -45,15 +45,15 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-black/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           {/* Encabezado de la sección */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Contáctanos
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-dark-700">
               ¿Tienes alguna pregunta? Estamos aquí para ayudarte
             </p>
           </div>
@@ -61,7 +61,7 @@ export const Contact = () => {
           {/* Formulario de contacto */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-dark-700 mb-1">
                 Nombre completo
               </label>
               <input
@@ -71,13 +71,13 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-dark-200 border border-dark-300 text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent placeholder-dark-600"
                 placeholder="Tu nombre"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-dark-700 mb-1">
                 Correo electrónico
               </label>
               <input
@@ -87,13 +87,13 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-dark-200 border border-dark-300 text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent placeholder-dark-600"
                 placeholder="tu@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-dark-700 mb-1">
                 Mensaje
               </label>
               <textarea
@@ -103,7 +103,7 @@ export const Contact = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 bg-dark-200 border border-dark-300 text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent placeholder-dark-600"
                 placeholder="¿En qué podemos ayudarte?"
               />
             </div>
@@ -120,16 +120,16 @@ export const Contact = () => {
 
             {/* Mensajes de estado */}
             {submitStatus === 'success' && (
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                <p className="text-green-600 text-center">
+              <div className="p-4 bg-dark-200 border border-primary-500 rounded-lg">
+                <p className="text-primary-400 text-center">
                   ¡Mensaje enviado con éxito! Te contactaremos pronto.
                 </p>
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-center">
+              <div className="p-4 bg-dark-200 border border-red-500 rounded-lg">
+                <p className="text-red-500 text-center">
                   Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
                 </p>
               </div>
@@ -139,12 +139,12 @@ export const Contact = () => {
           {/* Información de contacto adicional */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Correo electrónico</h3>
-              <p className="text-gray-600">soporte@tuempresa.com</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Correo electrónico</h3>
+              <p className="text-dark-700">soporte@tuempresa.com</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Teléfono</h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Teléfono</h3>
+              <p className="text-dark-700">+1 (555) 123-4567</p>
             </div>
           </div>
         </div>

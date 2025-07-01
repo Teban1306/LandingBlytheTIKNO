@@ -60,14 +60,14 @@ const plans: PricingPlan[] = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section id="pricing" className="py-20 bg-black/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Encabezado de la sección */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Planes y Precios
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-dark-700 max-w-2xl mx-auto">
             Elige el plan que mejor se adapte a tus necesidades
           </p>
         </div>
@@ -78,20 +78,20 @@ export const Pricing = () => {
             <div key={index} className={`relative ${plan.highlighted ? 'transform scale-105' : ''}`}>
               {plan.highlighted && (
                 <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4">
-                  <span className="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-primary-500 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-lg shadow-primary-500/30">
                     Popular
                   </span>
                 </div>
               )}
               <Card
-                className={`h-full ${plan.highlighted ? 'border-2 border-blue-600 shadow-xl' : 'border border-gray-200'}`}
+                className={`h-full bg-dark-200 ${plan.highlighted ? 'border-2 border-primary-500 shadow-xl shadow-primary-500/20' : 'border border-dark-300'}`}
               >
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                  <p className="text-dark-700 mb-6">{plan.description}</p>
                   <div className="mb-6">
-                    <span className="text-4xl font-bold text-gray-900">${plan.price}</span>
-                    <span className="text-gray-600">/{plan.billing}</span>
+                    <span className="text-4xl font-bold text-primary-400">${plan.price}</span>
+                    <span className="text-dark-700">/{plan.billing}</span>
                   </div>
                   <Button
                     variant={plan.highlighted ? 'primary' : 'outline'}
@@ -103,10 +103,10 @@ export const Pricing = () => {
                     {plan.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
-                        className="flex items-center text-gray-600"
+                        className="flex items-center text-dark-700"
                       >
                         <svg
-                          className={`w-5 h-5 mr-2 ${feature.included ? 'text-green-500' : 'text-gray-400'}`}
+                          className={`w-5 h-5 mr-2 ${feature.included ? 'text-primary-500' : 'text-dark-500'}`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
