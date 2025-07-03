@@ -27,7 +27,24 @@ const galleryItems: GalleryItem[] = [
     title: 'Blythe Kit bricolaje',
     tag: 'Creala desde cero'
   },
-  // Añadir más items según sea necesario
+  {
+    id: 4,
+    image: '/src/frontend/assets/images/Unic1.jpg',
+    title: '',
+    tag: ''
+  },
+  {
+    id: 5,
+    image: '/src/frontend/assets/images/unic2.jpg',
+    title: '',
+    tag: ''
+  },
+  {
+    id: 6,
+    image: '/src/frontend/assets/images/unic3.jpeg',
+    title: '',
+    tag: ''
+  }
 ];
 
 export const Gallery = () => {
@@ -88,8 +105,23 @@ export const Gallery = () => {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-16">
+          <ScrollFloat
+            containerClassName="text-2xl font-serif font-bold text-neutral-800 text-center"
+            animationDuration={2}
+            ease="power2.out"
+            scrollStart="top bottom"
+            scrollEnd="top center+=100"
+            stagger={0.1}
+          >
+            Cada Blythe es única, creada con pasión y dedicación.
+          </ScrollFloat>
+        </div>
       </div>
     </div>
+
+
     </section>
   );
 };
