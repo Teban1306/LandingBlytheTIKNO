@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center"
+      className="relative min-h-[90vh] flex items-center mb-8"
       style={{
         backgroundImage: `url(${headerFondo})`,
         backgroundSize: 'cover',

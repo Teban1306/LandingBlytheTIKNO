@@ -4,7 +4,6 @@ import { About } from './components/sections/About/About';
 import { Gallery } from './components/sections/Gallery/Gallery';
 import { Customize } from './components/sections/Customize/Customize';
 import { Reviews } from './components/sections/Reviews/Reviews';
-import { Blog } from './components/sections/Blog/Blog';
 import { CTA } from './components/sections/CTA/CTA';
 import { Footer } from './components/common/Footer/Footer';
 import { FloatingImage } from './components/common/FloatingImage/FloatingImage';
@@ -15,17 +14,16 @@ function App() {
     <div className="min-h-screen relative bg-gradient-to-b from-[#fff1f8] to-[#f8f2ff]">
       <div className="relative">
         <Navbar />
-        <main>
+        <main className="flex flex-col gap-4">
           <Hero />
           <About />
           <Gallery />
           <Customize />
           <Reviews />
-          <Blog />
           <CTA />
         </main>
-        <Footer />
-        <FloatingImage imagePath={blythefont} altText="Blythe Icon" size={80} />
+        <Footer className="mt-8" />
+        <FloatingImage imagePath={blythefont} altText="Blythe Icon" size={80} className="fixed bottom-4 right-4 z-50" />
       </div>
     </div>
   );

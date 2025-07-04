@@ -8,10 +8,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Inicio', href: '#hero' },
-  { label: 'Características', href: '#features' },
-  { label: 'Testimonios', href: '#testimonials' },
-  { label: 'Precios', href: '#pricing' },
-  { label: 'Contacto', href: '#contact' }
+  { label: 'Galería', href: '#gallery' },
+  { label: 'Personalización', href: '#customize' },
+  { label: 'Testimonios', href: '#reviews' },
 ];
 
 export const Navbar = () => {
@@ -38,9 +37,11 @@ export const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="primary" size="small">
-              Comenzar
-            </Button>
+            <a href="#footer">
+              <Button variant="primary" size="small">
+                Comenzar
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -77,9 +78,11 @@ export const Navbar = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="primary" size="small" className="w-full">
-                Comenzar
-              </Button>
+              <a href="#footer" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="primary" size="small" className="w-full">
+                  Comenzar
+                </Button>
+              </a>
             </div>
           </div>
         )}

@@ -1,6 +1,7 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import newsletterRoutes from './routes/newsletterRoutes';
 
 // Configuración de variables de entorno
 dotenv.config();
@@ -12,8 +13,11 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Rutas
+app.use('/api/newsletter', newsletterRoutes);
+
 // Ruta de prueba
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'API Backend funcionando correctamente' });
 });
 

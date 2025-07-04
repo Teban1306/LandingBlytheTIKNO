@@ -41,7 +41,8 @@ const features: FeatureCard[] = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-white/40 backdrop-blur-sm">
+    <section id="about" className="py-12 bg-white/40 backdrop-blur-sm rounded-t-3xl shadow-lg">
+      <div className="bg-white/60 backdrop-blur-sm rounded-t-3xl p-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center mb-16 space-y-6">
           <div className="w-full text-center">
@@ -98,6 +99,7 @@ export const About = () => {
             </ScrollFloat>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

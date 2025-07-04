@@ -40,8 +40,9 @@ const steps: CustomizationStep[] = [
 
 export const Customize = () => {
   return (
-    <section id="customize" className="py-20 bg-white/40 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="customize" className="py-12 bg-white/30 backdrop-blur-sm">
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg mx-4 sm:mx-6 lg:mx-8">
+        <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center space-y-6 mb-16">
           <SplitText
             text="Personaliza la tuya"
@@ -122,6 +123,7 @@ export const Customize = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

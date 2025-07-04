@@ -36,8 +36,9 @@ const reviews: Review[] = [
 
 export const Reviews = () => {
   return (
-    <section id="reviews" className="py-20 bg-pastel-pink/30 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-12 bg-white/30 backdrop-blur-sm">
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-12 shadow-lg mx-4 sm:mx-6 lg:mx-8">
+        <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h3 className="text-2xl font-medium text-primary-500">
              Testimonios de la comunidad
@@ -49,13 +50,13 @@ export const Reviews = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="p-6">
+            <div key={review.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="p-8">
                 <div className="flex items-center space-x-3 mb-4">
                   <img
                     src="/images/user-avatar.svg"
                     alt={`Avatar de ${review.name}`}
-                    className="w-10 h-10 rounded-full"
+                    className="w-10 h-10 rounded-full object-cover"
                   />
                   <div className="flex items-center">
                     <p className="font-semibold text-neutral-800">{review.name}</p>
@@ -72,29 +73,18 @@ export const Reviews = () => {
                 <blockquote className="text-lg italic text-neutral-600 mb-6">
                   "{review.quote}"
                 </blockquote>
-                <div className="rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="aspect-[4/3] rounded-lg overflow-hidden">
                   <img
                     src={review.image}
                     alt={`Muñeca personalizada de ${review.name}`}
-                    className="w-full h-64 object-contain rounded-lg transform hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover rounded-lg transform hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-medium text-neutral-800 mb-4">
-            ¿Tienes una historia que contar? 💌
-          </h3>
-          <p className="text-lg text-neutral-600 mb-8">
-            Comparte tu experiencia con nuestra comunidad.
-          </p>
-          <button className="bg-primary-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors duration-300">
-            [ Enviar historia ]
-          </button>
-        </div>
+      </div>
       </div>
     </section>
   );

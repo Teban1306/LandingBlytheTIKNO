@@ -2,10 +2,10 @@
   "name": "packages",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "dev:backend": "ts-node-dev --respawn --transpile-only src/backend/server.ts",
+    "dev:backend": "ts-node-dev --respawn --transpile-only --project src/backend/tsconfig.json src/backend/server.ts",
     "build": "tsc -b && vite build",
     "build:backend": "tsc -p src/backend",
     "lint": "eslint .",
@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
+    "@types/nodemailer": "^6.4.17",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "gsap": "^3.13.0",
     "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^7.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.16.0"

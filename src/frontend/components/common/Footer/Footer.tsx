@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface SocialLink {
   name: string;
   href: string;
@@ -41,28 +43,74 @@ const footerLinks = [
   { label: 'Políticas', href: '#' }
 ];
 
-export const Footer = () => {
+interface FooterProps {
+  className?: string;
+}
+
+export const Footer = ({ className = '' }: FooterProps) => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('http://localhost:3000/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setMessage('¡Gracias por suscribirte!');
+        setEmail('');
+      } else {
+        throw new Error(data.error || 'Error en la suscripción');
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage(error instanceof Error ? error.message : 'Error al procesar la suscripción');
+    }
+  };
   return (
-    <footer className="bg-neutral-900 text-white py-12">
+    <footer id="footer" className={`bg-neutral-900 text-white py-12 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Newsletter */}
           <div className="col-span-1">
             <h3 className="text-xl font-serif font-semibold mb-4">Newsletter</h3>
             <p className="text-neutral-400 mb-4">Recibe novedades y lanzamientos</p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Tu email"
-                className="flex-1 px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 focus:outline-none focus:border-primary-500"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-300"
-              >
-                Suscribir
-              </button>
-            </form>
+            <div className="flex gap-4">
+              <form onSubmit={handleSubmit} className="flex gap-4">
+                <input
+                  type="email"
+                  placeholder="Tu email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-transparent border border-white/20 rounded-lg px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:border-white/40 transition-colors"
+                  required
+                />
+                <button 
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className={`${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''} bg-white text-neutral-900 px-6 py-2 rounded-lg font-medium hover:bg-white/90 transition-colors`}
+                >
+                  {status === 'loading' ? 'Enviando...' : 'Suscribir'}
+                </button>
+              </form>
+            </div>
+            {message && (
+              <p className={`mt-2 ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                {message}
+              </p>
+            )}
           </div>
 
           {/* Social Links */}

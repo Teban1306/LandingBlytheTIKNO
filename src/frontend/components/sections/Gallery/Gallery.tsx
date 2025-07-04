@@ -30,20 +30,20 @@ const galleryItems: GalleryItem[] = [
   {
     id: 4,
     image: '/src/frontend/assets/images/Unic1.jpg',
-    title: '',
-    tag: ''
+    title: 'Blythe Personalizada',
+    tag: 'Personalizala como quieras'
   },
   {
     id: 5,
     image: '/src/frontend/assets/images/unic2.jpg',
-    title: '',
-    tag: ''
+    title: 'Blythe Clásica',
+    tag: 'Clasica'
   },
   {
     id: 6,
     image: '/src/frontend/assets/images/unic3.jpeg',
-    title: '',
-    tag: ''
+    title: 'Blythe Kit Completo',
+    tag: 'Creala desde cero'
   }
 ];
 
@@ -64,7 +64,8 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white/40 backdrop-blur-sm"><div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+    <section id="gallery" className="py-12 bg-white/30 backdrop-blur-sm">
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg mx-4 sm:mx-6 lg:mx-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <ScrollFloat

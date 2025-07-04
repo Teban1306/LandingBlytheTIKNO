@@ -6,6 +6,7 @@ interface FloatingImageProps {
   imagePath: string;
   altText?: string;
   size?: number;
+  className?: string;
 }
 
 const funFacts = [
@@ -19,7 +20,7 @@ const funFacts = [
 ];
 
 
-export const FloatingImage = ({ imagePath, altText = '', size = 150 }: FloatingImageProps) => {
+export const FloatingImage = ({ imagePath, altText = '', size = 150, className = '' }: FloatingImageProps) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
@@ -71,7 +72,7 @@ export const FloatingImage = ({ imagePath, altText = '', size = 150 }: FloatingI
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 floating-image flex items-end gap-4 transition-all duration-500 ease-out opacity-0 translate-y-6">
+    <div className={`floating-image flex items-end gap-4 transition-all duration-500 ease-out opacity-0 translate-y-6 ${className}`}>
       <div className="dialog-box bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs text-sm">
           {funFacts[0]}
         </div>
