@@ -12,7 +12,7 @@ const reviews: Review[] = [
     id: 1,
     name: 'Ana M.',
     quote: 'Mi muñeca personalizada es una obra de arte.',
-    image: '/src/frontend/assets/images/muñ1.jpg',
+    image: '/images/muñ1.jpg',
     badge: 'Top Cliente',
     verified: true
   },
@@ -20,7 +20,7 @@ const reviews: Review[] = [
     id: 2,
     name: 'Laura S.',
     quote: 'Cada detalle es perfecto, superó mis expectativas.',
-    image: '/src/frontend/assets/images/muñ2.jpg',
+    image: '/images/muñ2.jpg',
     badge: 'Coleccionista',
     verified: true
   },
@@ -28,7 +28,7 @@ const reviews: Review[] = [
     id: 3,
     name: 'María P.',
     quote: 'La calidad y atención al detalle son excepcionales.',
-    image: '/src/frontend/assets/images/muñ3.jpg',
+    image: '/images/muñ3.jpg',
     badge: 'Verificada',
     verified: true
   }

@@ -1,4 +1,3 @@
-import headerFondo from '../../../assets/images/headerfondo.jpg';
 import SplitText from '../../common/SplitText/SplitText';
 
 export const Hero = () => {
@@ -7,7 +6,7 @@ export const Hero = () => {
       id="hero" 
       className="relative min-h-[90vh] flex items-center mb-8"
       style={{
-        backgroundImage: `url(${headerFondo})`,
+        backgroundImage: `url('/images/headerfondo.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

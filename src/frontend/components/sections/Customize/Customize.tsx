@@ -106,7 +106,7 @@ export const Customize = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max mt-16">
-          {['/src/frontend/assets/images/vid1.mp4', '/src/frontend/assets/images/vid2.mp4', '/src/frontend/assets/images/vid3.mp4'].map((videoPath, index) => (
+          {['/images/vid1.mp4', '/images/vid2.mp4', '/images/vid3.mp4'].map((videoPath, index) => (
             <div key={index} className="relative aspect-[9/16] w-full max-w-[350px] mx-auto">
               <video
                 className="w-full h-full rounded-2xl object-cover"

@@ -11,37 +11,37 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    image: '/src/frontend/assets/images/Blythebasic.jpg',
+    image: '/images/Blythebasic.jpg',
     title: 'Blythe Desnuda',
     tag: 'Clasica'
   },
   {
     id: 2,
-    image: '/src/frontend/assets/images/Blythemedium.webp',
+    image: '/images/Blythemedium.webp',
     title: 'Blythe Personalizada',
     tag: 'Personalizala como quieras'
   },
   {
     id: 3,
-    image: '/src/frontend/assets/images/Blytheparts.jpeg',
+    image: '/images/Blytheparts.jpeg',
     title: 'Blythe Kit bricolaje',
     tag: 'Creala desde cero'
   },
   {
     id: 4,
-    image: '/src/frontend/assets/images/Unic1.jpg',
+    image: '/images/Unic1.jpg',
     title: 'Blythe Personalizada',
     tag: 'Personalizala como quieras'
   },
   {
     id: 5,
-    image: '/src/frontend/assets/images/unic2.jpg',
+    image: '/images/unic2.jpg',
     title: 'Blythe Clásica',
     tag: 'Clasica'
   },
   {
     id: 6,
-    image: '/src/frontend/assets/images/unic3.jpeg',
+    image: '/images/unic3.jpeg',
     title: 'Blythe Kit Completo',
     tag: 'Creala desde cero'
   }
