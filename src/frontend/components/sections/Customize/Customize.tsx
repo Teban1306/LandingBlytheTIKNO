@@ -1,12 +1,16 @@
+import { ReactNode } from 'react';
+import ScrollFloat from '../../common/ScrollFloat/ScrollFloat';
+import SplitText from '../../common/SplitText/SplitText';
+
 interface CustomizationStep {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
 }
 
 const steps: CustomizationStep[] = [
   {
-    title: ' Elige tu Blythe favorita',
+    title: 'Elige tu Blythe favorita',
     description: 'Explora nuestra colección de muñecas base originales y selecciona la que más te inspire para comenzar tu creación.',
     icon: (
       <svg className="w-12 h-12 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -15,29 +19,24 @@ const steps: CustomizationStep[] = [
     )
   },
   {
-    title: ' Diseña su estilo único',
+    title: 'Diseña su estilo único',
     description: 'Personaliza cada detalle con una amplia selección de outfits, peinados y accesorios. ¡Haz que refleje tu imaginación!',
     icon: (
       <svg className="w-12 h-12 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
       </svg>
     )
   },
   {
-    title: ' Admira tu creación',
-    description: 'Una vez terminada, podrás ver una vista previa detallada de tu Blythe personalizada antes de enviarla a producción. ¡Tu obra de arte, lista para enamorar!',
+    title: 'Recibe tu creación',
+    description: 'Nuestros artistas expertos darán vida a tu diseño con cuidado y atención al detalle. ¡Prepárate para recibir tu Blythe única!',
     icon: (
       <svg className="w-12 h-12 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
       </svg>
     )
   }
 ];
-
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SplitText from '../../common/SplitText/SplitText';
 
 export const Customize = () => {
   return (
@@ -72,24 +71,36 @@ export const Customize = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="relative group">
-              <div className="flex flex-col items-center text-center p-8 bg-white/30 rounded-lg hover:bg-white/40 transition-colors duration-300 h-[320px] justify-between">
-                <div className="relative">
-                  <div className="absolute -left-4 -top-4 w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
-                    {index + 1}
+            <ScrollFloat
+              key={index}
+              containerClassName="h-full"
+              animationDuration={0.8}
+              ease="power3.out"
+              scrollStart="top bottom-=20%"
+              scrollEnd="bottom center"
+              stagger={0.2}
+            >
+              <div className="relative group">
+                <div className="flex flex-col items-center text-center p-8 bg-white/30 rounded-lg hover:bg-white/40 transition-colors duration-300 h-[320px] justify-between">
+                  <div className="relative">
+                    <div className="absolute -left-4 -top-4 w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
+                      {index + 1}
+                    </div>
+                    <div className="p-4 bg-white rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {step.icon}
+                    </div>
                   </div>
-                  <div className="p-4 bg-white rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {step.icon}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-serif font-semibold text-neutral-800 mb-3 whitespace-pre-line">
+                      {step.title}
+                    </h3>
+                    <p className="text-neutral-600">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-                <h3 className="text-xl font-serif font-semibold text-neutral-800 mb-3 whitespace-pre-line">
-                  {step.title}
-                </h3>
-                <p className="text-neutral-600">
-                  {step.description}
-                </p>
               </div>
-            </div>
+            </ScrollFloat>
           ))}
         </div>
 

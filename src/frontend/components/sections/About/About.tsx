@@ -1,5 +1,6 @@
 import { Card } from '../../common/Card/Card';
 import SplitText from '../../common/SplitText/SplitText';
+import ScrollFloat from '../../common/ScrollFloat/ScrollFloat';
 
 interface FeatureCard {
   title: string;
@@ -73,23 +74,28 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="group hover:transform hover:scale-105 transition-all duration-300">
-              <Card className="h-full bg-white/30 hover:bg-white/50 transition-colors duration-300 p-6">
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-3 bg-pastel-cream rounded-full mb-4 group-hover:bg-pastel-pink transition-colors duration-300">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-serif font-semibold text-neutral-800 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-neutral-600">
-                    {feature.description}
-                  </p>
-                </div>
-              </Card>
-            </div>
+            <ScrollFloat
+              key={index}
+              containerClassName="h-full"
+              animationDuration={0.8}
+              ease="power3.out"
+              scrollStart="top bottom-=20%"
+              scrollEnd="bottom center"
+              stagger={0.2}
+            >
+              <div className="h-full">
+                <Card
+                  key={index}
+                  title={feature.title}
+                  description={feature.description}
+                  className="bg-white/30 hover:bg-white/40 transition-colors duration-300 h-full"
+                >
+                  {feature.icon}
+                </Card>
+              </div>
+            </ScrollFloat>
           ))}
         </div>
       </div>
