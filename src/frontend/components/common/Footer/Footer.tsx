@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface SocialLink {
   name: string;
@@ -57,26 +58,26 @@ export const Footer = ({ className = '' }: FooterProps) => {
     setStatus('loading');
 
     try {
-      const response = await fetch('http://localhost:3000/api/newsletter/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email })
-      });
+      // Configurar EmailJS
+      const templateParams = {
+        email: email,
+        name: email.split('@')[0] // Usar la parte antes del @ como nombre
+      };
 
-      const data = await response.json();
+      await emailjs.send(
+        'service_czcbq1h', // Service ID
+        'template_yvjy5cn', // Template ID
+        templateParams,
+        'gC3CYWuHAjxLaHNEm' // Public Key
+      );
 
-      if (response.ok) {
-        setStatus('success');
-        setMessage('¡Gracias por suscribirte!');
-        setEmail('');
-      } else {
-        throw new Error(data.error || 'Error en la suscripción');
-      }
+      setStatus('success');
+      setMessage('¡Gracias por suscribirte! Revisa tu email para confirmar.');
+      setEmail('');
     } catch (error) {
       setStatus('error');
-      setMessage(error instanceof Error ? error.message : 'Error al procesar la suscripción');
+      setMessage('Error al procesar la suscripción. Inténtalo de nuevo.');
+      console.error('EmailJS error:', error);
     }
   };
   return (

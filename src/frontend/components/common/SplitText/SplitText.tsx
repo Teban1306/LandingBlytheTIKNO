@@ -5,6 +5,8 @@ import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
+type TextAlign = "left" | "center" | "right" | "justify" | "start" | "end";
+
 interface SplitTextProps {
   text: string;
   className?: string;
@@ -22,7 +24,7 @@ interface SplitTextProps {
   };
   threshold?: number;
   rootMargin?: string;
-  textAlign?: string;
+  textAlign?: TextAlign;
   onLetterAnimationComplete?: () => void;
 }
 
@@ -40,7 +42,7 @@ const SplitText = ({
   textAlign = "center",
   onLetterAnimationComplete,
 }: SplitTextProps) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const SplitText = ({
     if (!el || animationCompletedRef.current) return;
 
     const absoluteLines = splitType === "lines";
-    if (absoluteLines) el.style.position = "relative";
+    if (absoluteLines && el) el.style.position = "relative";
 
     const splitter = new GSAPSplitText(el, {
       type: splitType,
@@ -72,7 +74,7 @@ const SplitText = ({
     }
 
     targets.forEach((t) => {
-      t.style.willChange = "transform, opacity";
+      (t as HTMLElement).style.willChange = "transform, opacity";
     });
 
     const startPct = (1 - threshold) * 100;
