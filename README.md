@@ -171,13 +171,12 @@ El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
 
-## 📄 Licencia
-
-Este proyecto es privado y pertenece a Blythe Dolls.
+## 📜 Licencia
+Licencia de libre uso
 
 ## 📞 Contacto
 
 Para consultas sobre el proyecto, contactar al equipo de desarrollo.
-
+https://github.com/TIKNO-col
 ---
 
