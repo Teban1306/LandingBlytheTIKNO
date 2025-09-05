@@ -4,7 +4,7 @@
 
 Landing page moderna y elegante para Blythe Dolls, una tienda especializada en muñecas únicas y personalizadas. El sitio web presenta una experiencia visual atractiva con galería de productos, sistema de suscripción a newsletter y diseño completamente responsivo.
 
-## 🚀 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Frontend
 - **React 18** - Biblioteca de JavaScript para construir interfaces de usuario
@@ -24,7 +24,7 @@ Landing page moderna y elegante para Blythe Dolls, una tienda especializada en m
 - **PostCSS** - Procesador de CSS
 - **Git** - Control de versiones
 
-## 🛠️ Instalación y Configuración
+##  Instalación y Configuración
 
 ### Prerrequisitos
 - Node.js (versión 16 o superior)
@@ -52,7 +52,7 @@ Landing page moderna y elegante para Blythe Dolls, una tienda especializada en m
    npm run dev
    ```
 
-## 📋 Scripts Disponibles
+##  Scripts Disponibles
 
 ```bash
 # Desarrollo
@@ -62,7 +62,7 @@ npm run preview      # Previsualiza la build de producción
 npm run lint         # Ejecuta ESLint para revisar el código
 ```
 
-## 🌐 Deploy
+##  Deploy
 
 ### Vercel (Recomendado)
 
@@ -85,7 +85,7 @@ El proyecto está configurado para deploy automático en Vercel:
 - Los paths en el código deben usar rutas relativas: `/images/archivo.jpg`
 - El favicon se encuentra en `public/logo.png`
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 P-landing-page/
@@ -112,30 +112,30 @@ P-landing-page/
 └── README.md
 ```
 
-## ✨ Características Principales
+##  Características Principales
 
-### 🎨 Diseño y UX
+###  Diseño y UX
 - Diseño responsivo para todos los dispositivos
 - Animaciones suaves con Framer Motion
 - Paleta de colores elegante y moderna
 - Tipografía cuidadosamente seleccionada (Playfair Display, Poppins, Lato)
 
-### 🖼️ Galería de Productos
+### Galería de Productos
 - Visualización de muñecas Blythe en diferentes categorías
 - Imágenes optimizadas para web
 - Navegación intuitiva
 
-### 📧 Sistema de Newsletter
+###  Sistema de Newsletter
 - Integración con EmailJS para envío de confirmaciones
 - Formulario de suscripción en el footer
 - Validación de emails en tiempo real
 
-### 🎥 Contenido Multimedia
+###  Contenido Multimedia
 - Videos demostrativos de personalización
 - Galería de imágenes de alta calidad
 - Optimización para carga rápida
 
-## 🔧 Configuración de EmailJS
+##  Configuración de EmailJS
 
 El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 
@@ -143,7 +143,7 @@ El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 - **Template ID**: Template personalizado para confirmaciones
 - **Public Key**: Clave pública de EmailJS
 
-## 🐛 Solución de Problemas Comunes
+##  Solución de Problemas Comunes
 
 ### Imágenes no se muestran en producción
 - Verificar que las imágenes están en `public/images/`
@@ -155,7 +155,7 @@ El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 - Verificar que todas las dependencias están instaladas
 - Revisar la configuración de TypeScript
 
-## 📱 Compatibilidad
+##  Compatibilidad
 
 - ✅ Chrome (últimas 2 versiones)
 - ✅ Firefox (últimas 2 versiones)
@@ -163,7 +163,7 @@ El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 - ✅ Edge (últimas 2 versiones)
 - ✅ Dispositivos móviles (iOS y Android)
 
-## 🤝 Contribución
+##  Contribución
 
 1. Fork el proyecto
 2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
@@ -171,10 +171,10 @@ El sistema de newsletter utiliza EmailJS con las siguientes configuraciones:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
 
-## 📜 Licencia
+##  Licencia
 Licencia de libre uso
 
-## 📞 Contacto
+##  Contacto
 
 Para consultas sobre el proyecto, contactar al equipo de desarrollo.
 https://github.com/TIKNO-col
