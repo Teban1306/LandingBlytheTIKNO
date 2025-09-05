@@ -1,6 +1,6 @@
 # Blythe Dolls - Landing Page
 
-## 📖 Descripción del Proyecto
+##  Descripción del Proyecto
 
 Landing page moderna y elegante para Blythe Dolls, una tienda especializada en muñecas únicas y personalizadas. El sitio web presenta una experiencia visual atractiva con galería de productos, sistema de suscripción a newsletter y diseño completamente responsivo.
 
